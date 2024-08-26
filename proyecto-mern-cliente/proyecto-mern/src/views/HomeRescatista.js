@@ -85,8 +85,7 @@ const HomeRescatista = () => {
   return (
     <>
     <Menu></Menu>
-    <div>
-      <h1>Bienvenido, Rescatista</h1>
+    <div className="home-page body-registro fondo-registro">
       <div className="container">
         <div className="left-column">
           <div className="panel-resumen">

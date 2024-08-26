@@ -74,7 +74,7 @@ const FormularioRegistro = (props) => {
     return (
         <>
             <>
-                <div className="body-registro gradient-custom-2">
+                <div className="body-registro fondo-registro" >
                     <div className="container-registro">
                         <h2 className="titulo-registro">Registrarse</h2>
                         <form className="form-registro" onSubmit={enviarFormularioRegistro}>
