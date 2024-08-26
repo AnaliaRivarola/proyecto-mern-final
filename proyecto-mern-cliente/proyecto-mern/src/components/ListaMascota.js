@@ -1,10 +1,11 @@
 // components/ListaMascota.js
-
+import Menu from './menu';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ListaMascota = ({ pets }) => {
   return (
+ 
     <table className="pet-list-table">
       <thead>
         <tr>
@@ -35,6 +36,7 @@ const ListaMascota = ({ pets }) => {
         ))}
       </tbody>
     </table>
+    
   );
 };
 
