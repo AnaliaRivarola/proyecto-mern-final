@@ -11,7 +11,7 @@ const port = 8000;
 const upload = multer({ dest: 'uploads/' });
 
 // Define las rutas
-app.post('/api/pets', upload.single('imagenMascota'), (req, res) => {
+ /*app.post('/api/pets', upload.single('imagenMascota'), (req, res) => {
     console.log(req.file); // Verifica la información del archivo recibido
     saveImage(req.file);
     res.send('Termina');
@@ -23,7 +23,7 @@ function saveImage(file) {
     fs.renameSync(file.path, newPath);
     return newPath;
 }
-
+*/
 require('./config/baseDatos');
 
 app.use(cors());

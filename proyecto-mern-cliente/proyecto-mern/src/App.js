@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Registro />} />
           <Route path="/PerfilRescatista" element={<PerfilRescatista />} />
           <Route path="/pets/new" element={<AgregarMascota />} />
           <Route path="/pets/:id/edit" element={<EditarMascota />} />
