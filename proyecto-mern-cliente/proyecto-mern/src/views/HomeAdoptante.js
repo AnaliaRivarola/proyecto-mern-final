@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Menu from '../components/menu';
+
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
 import '../App.css'; // Asegúrate de tener este archivo CSS para los estilos
 
@@ -22,6 +24,8 @@ const HomeAdoptante = () => {
   };
 
   return (
+    <>
+    <Menu></Menu>
     <div className="home-page">
       <h1>Lista de Mascotas</h1>
       <div className="pet-cards-container">
@@ -46,6 +50,7 @@ const HomeAdoptante = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

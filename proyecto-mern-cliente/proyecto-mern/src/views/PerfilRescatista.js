@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Menu from '../components/menu';
+
+
 import ListaMascota from '../components/ListaMascota';
 import { Link } from 'react-router-dom';
 
@@ -16,6 +19,8 @@ const PerfilRescatista = () => {
 
 
   return (
+    <>
+    <Menu></Menu>
     <div className="perfilRescatista-container">
       <h1>Rescatista de mascotas</h1>
       <div className='contenedor-rescatista'> 
@@ -31,6 +36,7 @@ const PerfilRescatista = () => {
       </div>
       <ListaMascota pets={pets} />
     </div>
+    </>
   );
 };
 

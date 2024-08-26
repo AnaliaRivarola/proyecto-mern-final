@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../estilos/resgistro.css';
+import Menu from './menu';
+import logo from "../assents/logo.png";
 
 const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza = '', initialSexo = '', initialEdad = '', initialOtrosDatos = '', initialEnAdopcion = false, onSubmitProp, errors }) => {
   const [nombre, setNombre] = useState(initialNombre);
@@ -28,6 +30,7 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
 
   return (
     <>
+    <Menu></Menu>
       <div className="body-registro gradient-custom-2">
         <div className="container-registro">
           <h2 className="titulo-registro">Agregar Mascota</h2>
@@ -43,9 +46,9 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
                 <input className="campo" type="text" value={tipo} onChange={(e) => setTipo(e.target.value)} />
                 {errors.tipo && <span className="error">{errors.tipo.message}</span>} {/* Mostrar mensaje de error */}
               </div>
-              </div>
+            </div>
 
-              <div className="form-row" >
+            <div className="form-row" >
               <div className="form-group-registro">
                 <label>Raza:</label><br />
                 <input className="campo" type="text" value={raza} onChange={(e) => setRaza(e.target.value)} />
@@ -56,11 +59,11 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
                 <input className="campo" type="text" value={sexo} onChange={(e) => setSexo(e.target.value)} />
                 {errors.sexo && <span className="error">{errors.sexo.message}</span>} {/* Mostrar mensaje de error */}
               </div>
-              </div>
+            </div>
 
 
 
-              <div className="form-row" >
+            <div className="form-row" >
               <div className="form-group-registro">
                 <label>edad(meses):</label><br />
                 <input className="campo" type="number" value={edad} onChange={(e) => setEdad(e.target.value)} />
@@ -71,10 +74,10 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
                 <input className="campo" type="text" value={otrosDatos} onChange={(e) => setOtrosDatos(e.target.value)} />
                 {errors.otrosDatos && <span className="error">{errors.otrosDatos.message}</span>} {/* Mostrar mensaje de error */}
               </div>
-              </div>
-             
+            </div>
 
-              <div className="form-row">
+
+            <div className="form-row">
               <div className="form-group-registro full-width">
                 <label>
                   <input
@@ -86,8 +89,8 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
                 </label>
               </div>
             </div>
-              <button className="btn-save" onClick={addmascota}>Guardar</button>
-            
+            <button className="btn-save" onClick={addmascota}>Guardar</button>
+
           </form>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Menu from '../components/menu';
+
 import { useNavigate, useParams } from 'react-router-dom';
 
 const PerfilMascota = () => {
