@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Menu from '../components/menu';
 import { useNavigate } from 'react-router-dom';
 import {
   Chart as ChartJS,
@@ -82,8 +83,9 @@ const HomeRescatista = () => {
   };
 
   return (
-    <div>
-      <h1>Bienvenido, Rescatista</h1>
+    <>
+    <Menu></Menu>
+    <div className="home-page body-registro fondo-registro">
       <div className="container">
         <div className="left-column">
           <div className="panel-resumen">
@@ -117,6 +119,7 @@ const HomeRescatista = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

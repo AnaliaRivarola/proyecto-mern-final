@@ -1,0 +1,44 @@
+.home-page {
+  padding-top: 80px; /* Ajusta esto según la altura de tu menú */
+}
+
+.pet-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 20px;
+}
+
+.pet-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  width: 250px;
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+}
+
+.pet-card h2 {
+  margin-top: 9px;
+  font-size: 24px;
+}
+
+.pet-card p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+.pet-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 13px;
+  border-radius: 50%; /* Esto hace que la imagen sea redonda */
+  margin: 0 auto; /* Esto centra la imagen horizontalmente */
+  display: block; /* Necesario para que margin auto funcione con imágenes */
+}
