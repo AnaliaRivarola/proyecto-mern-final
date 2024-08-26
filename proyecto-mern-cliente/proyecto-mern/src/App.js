@@ -7,12 +7,15 @@ import PerfilMascota from './views/PerfilMascota';
 import HomeAdoptante from './views/HomeAdoptante';
 import './App.css';
 import HomeRescatista from './views/HomeRescatista';
+import Login from './components/FormularioLogin';
+import Registro from './components/FormularioRegistro';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/" element={<Login />} />
           <Route path="/PerfilRescatista" element={<PerfilRescatista />} />
           <Route path="/pets/new" element={<AgregarMascota />} />
           <Route path="/pets/:id/edit" element={<EditarMascota />} />
