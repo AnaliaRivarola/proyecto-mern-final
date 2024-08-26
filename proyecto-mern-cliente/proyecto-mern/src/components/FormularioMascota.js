@@ -14,6 +14,7 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
   const [edad, setEdad] = useState(initialEdad);
   const [otrosDatos, setOtrosDatos] = useState(initialOtrosDatos);
   const [enAdopcion, setEnAdopcion] = useState(initialEnAdopcion);
+  
 
   const navigate = useNavigate();
   const addmascota = e => {
