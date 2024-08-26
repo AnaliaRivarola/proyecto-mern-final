@@ -1,11 +1,20 @@
-.gradient-custom-2 {
+.fondo-registro {
   background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-
+.gradient-custom-2 {
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px; /* Asegúrate de no cubrir el contenido con el menú */
+}
 .container-registro {
   background: white;
   padding: 2rem;
@@ -14,6 +23,7 @@
   max-width: 800px;
   width: 100%;
 }
+
 
 .titulo-registro {
   text-align: center;
