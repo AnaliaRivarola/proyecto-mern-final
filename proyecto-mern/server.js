@@ -3,7 +3,7 @@ const cors = require('cors');
 const multer = require('multer');
 const path = require('path'); // Opcional, si necesitas trabajar con rutas de archivo
 const fs = require('fs');
-
+const routerUsuario = require('./routes/rutaUsuario');
 const app = express();
 const port = 8000;
 
@@ -32,5 +32,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // Incluye las rutas desde otro archivo
 require('./routes/rutaMascota')(app);
+app.use('/usuario', routerUsuario); 
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));
