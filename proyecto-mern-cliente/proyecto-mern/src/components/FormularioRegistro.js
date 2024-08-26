@@ -82,7 +82,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="text"
-                                        className="input-nombre"
+                                        className="campo"
                                         id="nombre"
                                         name="nombre"
                                         value={nombre}
@@ -93,7 +93,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="text"
-                                        className="input-apellido"
+                                        className="campo"
                                         id="apellido"
                                         name="apellido"
                                         value={apellido}
@@ -107,7 +107,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="number"
-                                        className="input-edad"
+                                        className="campo"
                                         id="edad"
                                         name="edad"
                                         value={edad}
@@ -118,7 +118,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="text"
-                                        className="input-correo"
+                                        className="campo"
                                         id="correo"
                                         name="correo"
                                         value={correo}
@@ -132,7 +132,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="text"
-                                        className="input-telefono"
+                                        className="campo"
                                         id="telefono"
                                         name="telefono"
                                         value={telefono}
@@ -143,7 +143,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="text"
-                                        className="input-ciudad"
+                                        className="campo"
                                         id="ciudad"
                                         name="ciudad"
                                         value={ciudad}
@@ -157,7 +157,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="password"
-                                        className="input-contrasena"
+                                        className="campo"
                                         id="contrasena"
                                         name="contrasena"
                                         value={contrasena}
@@ -168,7 +168,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro">
                                     <input
                                         type="text"
-                                        className="input-estiloDeVida"
+                                        className="campo"
                                         id="estiloDeVida"
                                         name="estiloDeVida"
                                         value={estiloDeVida}
@@ -182,7 +182,7 @@ const FormularioRegistro = (props) => {
                                 <div className="form-group-registro full-width">
                                     <select
                                         id="opciones"
-                                        className="input-rol"
+                                        className="campo"
                                         value={rol}
                                         onChange={manejarCambio}
                                     >

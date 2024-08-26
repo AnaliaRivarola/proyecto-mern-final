@@ -40,15 +40,7 @@
   width: 100%;
 }
 
-.input-nombre,
-.input-apellido,
-.input-edad,
-.input-correo,
-.input-telefono,
-.input-ciudad,
-.input-contrasena,
-.input-estiloDeVida,
-.input-rol {
+.campo{
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
