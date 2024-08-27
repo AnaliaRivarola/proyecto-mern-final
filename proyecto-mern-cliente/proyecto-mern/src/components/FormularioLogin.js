@@ -98,10 +98,12 @@ const FormularioLogin = () => {
 
                       {err && <div className="text-danger mb-4">{err}</div>}
 
-                      <div className="text-center pb-1 ">
+                      <div className="  ">
                         <button
                           type="submit"
-                          className="btn btn-primary btn-block  gradient-custom mb-3 w-100"> {/* Añade la clase w-100 */}
+                          className=" gradient-color w-100"
+                        > 
+                          
                           Iniciar sesión
                         </button>
                         <Link className="text-muted" to="#">¿Olvidó su contraseña?</Link>
@@ -118,11 +120,13 @@ const FormularioLogin = () => {
 
                   </div>
                 </div>
-                <div className="col-lg-8 d-flex align-items-center gradient-custom-2">
+                <div className="col-lg-8 d-flex align-items-center gradient-color">
                   <div className="text-white px-3 py-4 p-md-5 mx-md-4 ">
-                    <h4 className="mb-4">¡Bienvenidos a Adopt Me!</h4>
-                    <p className="small mb-0 " >Estamos encantados de que estés aquí. Adopt Me es una organización sin fines de lucro dedicada a una misión muy especial: encontrar un hogar amoroso para cada animalito que lo necesita. Creemos que todos los animales merecen una vida llena de cariño y seguridad, y trabajamos incansablemente para hacer realidad este sueño.
-                      Si estás buscando un nuevo amigo peludo, has llegado al lugar indicado. Aquí podrás conocer a muchos animales que están esperando la oportunidad de ser parte de una familia. ¡Gracias por unirte a nuestra causa y por considerar abrir las puertas de tu hogar a un nuevo miembro!</p>
+                    <h4 className="mb-4" style={{ textAlign: "center" }}>¡Bienvenidos a Adopt Me!</h4>
+                    <p className="small  "  style={{ textAlign: "justify" }}>Estamos encantados de que estés aquí. Adopt Me es una organización sin fines de lucro dedicada a una misión muy especial: encontrar un hogar amoroso para cada animalito que lo necesita. </p>
+                    <p className="small  "  style={{ textAlign: "justify" }}> Creemos que todos los animales merecen una vida llena de cariño y seguridad, y trabajamos incansablemente para hacer realidad este sueño.</p>
+                    <p className="small  "  style={{ textAlign: "justify" }}>Si estás buscando un nuevo amigo peludo, has llegado al lugar indicado. Aquí podrás conocer a muchos animales que están esperando la oportunidad de ser parte de una familia. </p>
+                    <p className="small  "  style={{ textAlign: "justify" }}>¡Gracias por unirte a nuestra causa y por considerar abrir las puertas de tu hogar a un nuevo miembro!</p>
                   </div>
                 </div>
               </div>
