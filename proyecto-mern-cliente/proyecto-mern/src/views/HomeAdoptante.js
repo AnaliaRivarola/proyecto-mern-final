@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import Menu from '../components/menu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estilos/resgistro.css';
-import PerroImg from "../assents/perro.jpg";
-import GatoImg from "../assents/gato.jpg";
+import PerroImg from "../assents/perro.png";
+import GatoImg from "../assents/gato.png";
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
 import '../App.css'; // Asegúrate de tener este archivo CSS para los estilos
 import '../estilos/tarjetas.css';

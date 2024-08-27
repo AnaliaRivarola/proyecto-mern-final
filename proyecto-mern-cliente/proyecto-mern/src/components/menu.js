@@ -10,7 +10,7 @@ const Menu = () => {
   return (
     <nav>
       <div className="wrapper">
-      <img src={logo} style={{ width: "80px", height: "60px" }} alt="Logo" />
+      <img className="logo" src={logo} />
         <ul className="nav-links">
           <li><Link to="/registro">crear cuenta</Link></li>
           <li><Link to="/PerfilRescatista">Perfil Rescatista</Link></li>
