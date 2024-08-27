@@ -148,7 +148,9 @@ const HomeRescatista = () => {
               {requests.length > 0 ? (
                 requests.map((request, index) => (
                   <div key={index}>
-                    <p>Pet ID: {request.petId}</p>
+                    <p>Enhorabuena!!</p>
+                    <p>La mascota: {request.nombre} </p>
+                    <p>Ha sido solicitado para adopcion</p> {/* Muestra el nombre de la mascota */}
                     <button onClick={() => handleAccept(request.adoptanteSocketId, request.petId)}>Aceptar</button>
                     <button onClick={() => handleReject(request.adoptanteSocketId, request.petId)}>Rechazar</button>
                   </div>

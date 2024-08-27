@@ -5,6 +5,7 @@ const fs = require('fs');
 const http = require('http');
 const { Server } = require('socket.io');
 const routerUsuario = require('./routes/rutaUsuario');
+const Pet = require('./models/modeloMascota');
 require('./config/baseDatos'); // Asegúrate de que tu configuración de base de datos esté funcionando
 
 const app = express();
@@ -26,21 +27,32 @@ app.use(cors({
 io.on('connection', (socket) => {
     console.log('a user connected');
     
-    socket.on('adoptionRequest', (data) => {
+    socket.on('adoptionRequest', async (data) => {
         console.log('Adoption request received:', data);
-        // Envía una notificación al rescatista
-        io.emit('adoptionRequestNotification', data);
+        
+        try {
+            const pet = await Pet.findById(data.petId);
+            if (pet) {
+                const petData = {
+                    ...data,
+                    nombre: pet.nombre
+                };
+                io.emit('adoptionRequestNotification', petData);
+            } else {
+                console.log('Mascota no encontrada');
+            }
+        } catch (error) {
+            console.error('Error al buscar la mascota:', error);
+        }
     });
 
     socket.on('acceptAdoption', (data) => {
         console.log('Adoption accepted:', data);
-        // Envía una notificación al adoptante
         io.to(data.adoptanteSocketId).emit('adoptionStatus', { status: 'accepted' });
     });
 
     socket.on('rejectAdoption', (data) => {
         console.log('Adoption rejected:', data);
-        // Envía una notificación al adoptante
         io.to(data.adoptanteSocketId).emit('adoptionStatus', { status: 'rejected' });
     });
 
@@ -48,22 +60,6 @@ io.on('connection', (socket) => {
         console.log('user disconnected');
     });
 });
-
-// Configura multer
-const upload = multer({ dest: 'uploads/' });
-
-// Define las rutas
-app.post('/images/single', upload.single('imagenMascota'), (req, res) => {
-    console.log(req.file); // Verifica la información del archivo recibido
-    saveImage(req.file);
-    res.send('Termina');
-});
-
-function saveImage(file) {
-    const newPath = `./uploads/${file.originalname}`;
-    fs.renameSync(file.path, newPath); // Renombra el archivo a la nueva ruta
-    return newPath;
-}
 
 // Configura middleware
 app.use(express.json());
