@@ -23,7 +23,7 @@ app.use(cors({
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"]
 }));
-
+//socket.io
 io.on('connection', (socket) => {
     console.log('a user connected');
     
