@@ -1,5 +1,5 @@
-import {React, useState, } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';  // Unifica la importación de React y hooks
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PerfilRescatista from './views/PerfilRescatista';
 import AgregarMascota from './views/AgregarMascota';
 import EditarMascota from './views/EditarMascota';
@@ -14,21 +14,17 @@ const App = () => {
   const [listaUsuarios, setListaUsuario] = useState([]);
   const [loginValido, setLoginValido] = useState(false);
 
-
-  // const ubicacion = useLocation(); 
-
-
   const actualizarListaUsuarios = (nuevoUsuario) => {
     setListaUsuario([...listaUsuarios, nuevoUsuario]);
   }
 
+
   return (
     <Router>
-      <div >
+      <div>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/registro" element={<Registro
-               actualizarListaUsuarios={actualizarListaUsuarios} />}/>
+          <Route path="/registro" element={<Registro actualizarListaUsuarios={actualizarListaUsuarios} />} />
           <Route path="/PerfilRescatista" element={<PerfilRescatista />} />
           <Route path="/pets/new" element={<AgregarMascota />} />
           <Route path="/pets/:id/edit" element={<EditarMascota />} />

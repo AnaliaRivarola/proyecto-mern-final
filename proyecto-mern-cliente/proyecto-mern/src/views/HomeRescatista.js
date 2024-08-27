@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Menu from '../components/menu';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import '../estilos/HomeRescatista.css';
+import { io } from 'socket.io-client';
 
 // Registrar componentes de Chart.js
 ChartJS.register(
@@ -27,9 +28,15 @@ ChartJS.register(
 const HomeRescatista = () => {
   const [summary, setSummary] = useState({});
   const [pets, setPets] = useState([]);
+  const [requests, setRequests] = useState([]); // Estado para las solicitudes
   const navigate = useNavigate();
+  const socketRef = useRef(); // Usar useRef para la instancia del socket
 
   useEffect(() => {
+    // Inicializar el socket solo una vez
+    socketRef.current = io('http://localhost:8000'); 
+
+    // Obtener mascotas
     axios.get('/api/pets')
       .then(res => {
         const mascotas = res.data;
@@ -46,6 +53,21 @@ const HomeRescatista = () => {
         setPets(mascotas);
       })
       .catch(err => console.error(err));
+
+    // Escuchar solicitudes de adopción
+    socketRef.current.on('adoptionRequestNotification', (data) => {
+      console.log('Solicitud de adopción recibida:', data);
+      setRequests(prev => [...prev, data]);
+    });
+
+    socketRef.current.on('adoptionStatus', (data) => {
+      console.log('Notificación de adopción recibida:', data);
+      // Maneja la notificación (actualiza la UI, etc.)
+    });
+
+    return () => {
+      socketRef.current.disconnect(); // Desconectar el socket cuando el componente se desmonte
+    };
   }, []);
 
   const data = {
@@ -82,43 +104,62 @@ const HomeRescatista = () => {
     navigate('/PerfilRescatista');
   };
 
+  const handleAccept = (adoptanteSocketId, petId) => {
+    socketRef.current.emit('acceptAdoption', { adoptanteSocketId, petId });
+    // Remove request from the list after accepting
+    setRequests(prev => prev.filter(req => req.petId !== petId));
+  };
+
+  const handleReject = (adoptanteSocketId, petId) => {
+    socketRef.current.emit('rejectAdoption', { adoptanteSocketId, petId });
+    // Remove request from the list after rejecting
+    setRequests(prev => prev.filter(req => req.petId !== petId));
+  };
+
   return (
     <>
-    <Menu></Menu>
-    <div className="home-page body-registro fondo-registro">
-      <div className="container">
-        <div className="left-column">
-          <div className="panel-resumen">
-            <h2>Resumen</h2>
-            <p>Total de Mascotas Registradas: {summary.totalMascotas}</p>
-            <p>Mascotas Disponibles: {summary.disponibles}</p>
-            <p>Mascotas Adoptadas: {summary.adoptadas}</p>
-            <p>Likes Promedio: {summary.likesPromedio}</p>
+      <Menu />
+      <div className="home-page body-registro fondo-registro">
+        <div className="container">
+          <div className="left-column">
+            <div className="panel-resumen">
+              <h2>Resumen</h2>
+              <p>Total de Mascotas Registradas: {summary.totalMascotas}</p>
+              <p>Mascotas Disponibles: {summary.disponibles}</p>
+              <p>Mascotas Adoptadas: {summary.adoptadas}</p>
+              <p>Likes Promedio: {summary.likesPromedio}</p>
+            </div>
+
+            <div className="estadisticas">
+              <h2>Estadísticas</h2>
+              <Bar data={data} options={options} />
+            </div>
           </div>
 
-          <div className="estadisticas">
-            <h2>Estadísticas</h2>
-            <Bar data={data} options={options} />
-          </div>
-        </div>
+          <div className="right-column">
+            <div className="acceso-rapido">
+              <h2>Acceso Rápido</h2>
+              <button onClick={crearmascota}>Agregar Nueva Mascota</button>
+              <button onClick={verperfil}>Mi perfil</button>
+            </div>
 
-        <div className="right-column">
-          <div className="acceso-rapido">
-            <h2>Acceso Rápido</h2>
-            <button onClick={crearmascota}>
-              Agregar Nueva Mascota
-            </button>
-            <button onClick={verperfil}>
-              Mi perfil
-            </button>
-          </div>
-
-          <div className="solicitudes">
-            <h2>Solicitudes</h2>
+            <div className="solicitudes">
+              <h2>Solicitudes</h2>
+              {requests.length > 0 ? (
+                requests.map((request, index) => (
+                  <div key={index}>
+                    <p>Pet ID: {request.petId}</p>
+                    <button onClick={() => handleAccept(request.adoptanteSocketId, request.petId)}>Aceptar</button>
+                    <button onClick={() => handleReject(request.adoptanteSocketId, request.petId)}>Rechazar</button>
+                  </div>
+                ))
+              ) : (
+                <p>No hay solicitudes pendientes.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
