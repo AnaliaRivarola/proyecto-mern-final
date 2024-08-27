@@ -60,12 +60,12 @@ const FormularioLogin = () => {
 
   return (
     <section className="gradient-form" style={{ backgroundColor: "#eee" }}>
-      <div className="container ">
+      <div className="">
         <div className="d-flex justify-content-center align-items-center ">
-          <div className="col-xl-10">
+          <div className="col-xl-12">
             <div className="card rounded-3 text-black">
               <div className="row g-0">
-                <div className="col-lg-6 d-flex">
+                <div className="col-lg-4 d-flex">
                   <div className="card-body p-md-5 ">
 
                     <div className="text-center">
@@ -98,7 +98,7 @@ const FormularioLogin = () => {
 
                       {err && <div className="text-danger mb-4">{err}</div>}
 
-                      <div className="text-center pt-1 mb-5 pb-1">
+                      <div className="text-center pb-1 ">
                         <button
                           type="submit"
                           className="btn btn-primary btn-block  gradient-custom mb-3 w-100"> {/* Añade la clase w-100 */}
@@ -107,7 +107,7 @@ const FormularioLogin = () => {
                         <Link className="text-muted" to="#">¿Olvidó su contraseña?</Link>
                       </div>
 
-                      <div className="d-flex align-items-center justify-content-left ">
+                      <div className="d-flex align-items-center justify-content-left  ">
                         <p className="mb-0 me-2">¿No tiene una cuenta?</p>
                         <Link to="">
                           <button type="button" className="btn btn-outline-danger">Crear CUENTA</button>
@@ -118,7 +118,7 @@ const FormularioLogin = () => {
 
                   </div>
                 </div>
-                <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div className="col-lg-8 d-flex align-items-center gradient-custom-2">
                   <div className="text-white px-3 py-4 p-md-5 mx-md-4 ">
                     <h4 className="mb-4">¡Bienvenidos a Adopt Me!</h4>
                     <p className="small mb-0 " >Estamos encantados de que estés aquí. Adopt Me es una organización sin fines de lucro dedicada a una misión muy especial: encontrar un hogar amoroso para cada animalito que lo necesita. Creemos que todos los animales merecen una vida llena de cariño y seguridad, y trabajamos incansablemente para hacer realidad este sueño.
