@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { io } from 'socket.io-client';
-
+import Menu from '../components/menu';
+import PerroImg from "../assents/perro.png";
+import GatoImg from "../assents/gato.png";
+import '../estilos/perfilMascota.css';
 const PerfilMascota = () => {
   const { id } = useParams();
   const [pet, setPet] = useState({});
@@ -67,39 +70,52 @@ const PerfilMascota = () => {
   };
 
   return (
-    <div>
-      <div className='atras'>
-        <button className="back-button" onClick={goHome}>Volver a inicio</button>
+    <>
+      <Menu />
+      <div className=" gradient-custom">
+        <div className="container-registro">
+          <form >
+            <div >
+
+
+
+
+              {/* Centrar el título principal */}
+              <div className="titulo-container">
+                <h2 className="titulo-registro">{`Perfil de ${pet.nombre}`}</h2>
+              </div>
+
+              {/* Alinear datos descriptivos e imagen a la izquierda */}
+              <div className="descripcion-imagen-container">
+                <div className="descripcion" >
+                  <p className=' linea'><strong>Tipo de mascota:</strong> {pet.tipo}</p>
+                  <p className=' linea'><strong>Raza:</strong> {pet.raza}</p>
+                  <p className=' linea'><strong>Edad:</strong> {pet.edad} años</p>
+                  <p className=' linea'><strong>Sexo:</strong> {pet.sexo}</p>
+                  <p className=' linea'><strong>Otros Datos:</strong> {pet.otrosDatos}</p>
+                  <p className=' linea'><strong>En adopción:</strong> {pet.enAdopcion ? 'Sí' : 'No'}</p>
+                </div>
+
+                <div className="imagen">
+                  <img src={PerroImg} className="mascota-perfil" alt="Logo" />
+                </div>
+              </div>
+
+              {/* Alinear botones a la izquierda */}
+              <div className="panel-botones">
+                <button className="btn-save" onClick={adoptPet}>Adoptar {pet.nombre}</button>
+                <button className="btn-like" onClick={likePet} disabled={isLiked}>Like {pet.nombre}</button>
+                <p>{likes} like(s)</p>
+              </div>
+
+              {/* Mostrar notificaciones si hay */}
+              {notification && <p>{notification}</p>}
+            </div>
+          </form>
+        </div>
       </div>
+    </>
 
-      <div className="pet-detail-container">
-        <div className="pet-detail-header">
-          <h2>Perfil de {pet.nombre}</h2>
-        </div>
-
-        <div className="pet-info">
-          <div>
-            <p><strong>Tipo de mascota:</strong> {pet.tipo}</p>
-            <p><strong>Raza:</strong> {pet.raza}</p>
-            <p><strong>Edad:</strong> {pet.edad} años</p>
-            <p><strong>Sexo:</strong> {pet.sexo}</p>
-          </div>
-          <div>
-            <p><strong>Otros Datos:</strong> {pet.otrosDatos}</p>
-            <p><strong>En adopción:</strong> {pet.enAdopcion ? 'Sí' : 'No'}</p>
-          </div>
-        </div>
-
-        <div className="pet-actions">
-          <button className="btn-adopt" onClick={adoptPet}>Adoptar {pet.nombre}</button>
-          <button className="btn-like" onClick={likePet} disabled={isLiked}>Like {pet.nombre}</button>
-          <p>{likes} like(s)</p>
-        </div>
-
-        {/* Mostrar notificaciones si hay */}
-        {notification && <p>{notification}</p>}
-      </div>
-    </div>
   );
 };
 
