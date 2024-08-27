@@ -109,7 +109,7 @@ const FormularioLogin = () => {
 
                       <div className="d-flex align-items-center justify-content-left  ">
                         <p className="mb-0 me-2">¿No tiene una cuenta?</p>
-                        <Link to="">
+                        <Link to="/registro" className="register-link">
                           <button type="button" className="btn btn-outline-danger">Crear CUENTA</button>
                         </Link>
                       </div>

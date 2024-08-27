@@ -16,7 +16,6 @@ const FormularioRegistro = (props) => {
     const [ciudad, setCiudad] = useState("");
     const [rol, setRol] = useState("");
     const [estiloDeVida, setEstiloDeVida] = useState("");
-    const [mascotas, setMascotas] = useState("");
     const [error, setError] = useState("");
     const [mensaje, setMensaje] = useState("");
 
@@ -54,7 +53,7 @@ const FormularioRegistro = (props) => {
             setMensaje("¡Bienvenido! Tu registro ha sido exitoso.");
 
             setTimeout(() => {
-                navegacion("/login");
+                navegacion("/");
             }, 4000);
 
 
