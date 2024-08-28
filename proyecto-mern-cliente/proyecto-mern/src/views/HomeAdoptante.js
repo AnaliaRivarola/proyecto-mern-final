@@ -66,8 +66,6 @@ const HomeAdoptante = () => {
       </div>
       </div>
     </div>
-
-    <PerfilMascota agregarAFavoritos={agregarAFavoritos} />
     </>
   );
 };
