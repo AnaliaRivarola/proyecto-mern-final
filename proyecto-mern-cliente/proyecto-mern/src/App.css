@@ -209,13 +209,14 @@ tr:hover {
 
 .btn-adopt,
 .btn-like {
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #fff;
+    background-color: blue;
+    color: white;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
 }
 
 .btn-adopt {

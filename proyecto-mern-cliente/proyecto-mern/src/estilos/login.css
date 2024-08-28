@@ -6,15 +6,17 @@
     background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 
     padding: 10px 20px; /* Ajusta el padding según sea necesario */
-    margin-bottom: 30px;
     font-size: 16px; /* Ajusta el tamaño de la fuente */
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 button[type="submit"].gradient-custom {
     height: auto; /* Asegura que la altura se ajuste automáticamente */
     line-height: 1.5; /* Ajusta la altura de la línea para controlar la altura del texto */
+}
+.espacio {	    
+    margin-bottom: 20px;
+    text-align: center;
 }
 p {
     justify-content: center;

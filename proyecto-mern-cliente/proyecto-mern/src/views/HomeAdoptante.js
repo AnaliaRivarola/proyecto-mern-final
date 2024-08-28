@@ -48,12 +48,12 @@ const HomeAdoptante = () => {
           pets.map(pet => (
             <div
               key={pet._id}
-              className="pet-card"
+              className="pet-card "
               onClick={() => handleCardClick(pet._id)} // Maneja el clic en la tarjeta
             >
-              <img  src={pet.tipo === 'gato' ? GatoImg : PerroImg}  className="pet-image"alt="Logo" />
+              <img  src={pet.tipo === 'Gato' ? GatoImg : PerroImg}  className="pet-image"alt="Logo" />
               <h2>{pet.nombre}</h2>
-              <p>Es un/a  {pet.tipo} {pet.sexo} {pet.raza} de  {pet.edad} años de edad.</p>
+              <p>Es un {pet.tipo} {pet.sexo} {pet.raza} de  {Math.floor(pet.edad/12)} años, {pet.edad % 12} meses de edad.</p>
    
             </div>
           ))

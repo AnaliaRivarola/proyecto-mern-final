@@ -16,7 +16,10 @@ const PerfilMascota = ({agregarAFavoritos}) => {
   const [socket, setSocket] = useState(null);
   const [notification, setNotification] = useState('');
   const navigate = useNavigate();
+  const edadTotalEnMeses = pet.edad; // Supongamos que pet.edad es el total en meses
 
+  const años = Math.floor(edadTotalEnMeses / 12); // Calcula los años completos
+  const meses = edadTotalEnMeses % 12; // Calcula los meses restantes
   useEffect(() => {
     // Conectar con el servidor de socket.io
     const socketIo = io('http://localhost:8000');
@@ -92,31 +95,33 @@ const PerfilMascota = ({agregarAFavoritos}) => {
 
               {/* Centrar el título principal */}
               <div className="titulo-container">
-                <h2 className="titulo-registro">{`Perfil de ${pet.nombre}`}</h2>
+                <h2 className="titulo-registro">{`Datos de  ${pet.nombre}`}</h2>
               </div>
 
               {/* Alinear datos descriptivos e imagen a la izquierda */}
               <div className="descripcion-imagen-container">
                 <div className="descripcion" >
-                  <p className=' linea'><strong>Tipo de mascota:</strong> {pet.tipo}</p>
-                  <p className=' linea'><strong>Raza:</strong> {pet.raza}</p>
-                  <p className=' linea'><strong>Edad:</strong> {pet.edad} años</p>
-                  <p className=' linea'><strong>Sexo:</strong> {pet.sexo}</p>
-                  <p className=' linea'><strong>Otros Datos:</strong> {pet.otrosDatos}</p>
-                  <p className=' linea'><strong>En adopción:</strong> {pet.enAdopcion ? 'Sí' : 'No'}</p>
+                  <p className=' linea'><strong  style={{ marginRight: '20px'}}>Tipo: </strong> {pet.tipo}</p>
+                  <p className=' linea'><strong style={{ marginRight: '15px'}}>Raza: </strong>{pet.raza}</p>
+                  <p className=' linea'><strong style={{ marginRight: '15px'}}>Edad: </strong>{Math.floor(pet.edad/12)} años, {pet.edad % 12} meses</p>
+                  <p className=' linea'><strong style={{ marginRight: '17px'}}>Sexo: </strong>{pet.sexo}</p>
+                  <p className=' linea'>{pet.otrosDatos}</p>
+                   {/* <p className=' linea'><strong>En adopción:</strong> {pet.enAdopcion ? 'Sí' : 'No'}</p>*/}
+
                 </div>
 
                 <div className="imagen">
-                  <img src={PerroImg} className="mascota-perfil" alt="Logo" />
+                  <img src={pet.tipo === 'Gato' ? GatoImg : PerroImg}  className="mascota-perfil" alt="Logo" />
                 </div>
               </div>
 
-              {/* Alinear botones a la izquierda */}
               <div className="panel-botones">
                 <button className="btn-save" onClick={adoptPet}>Adoptar {pet.nombre}</button>
                 <button className="btn-like" onClick={likePet} disabled={isLiked}>Like {pet.nombre}</button>
                 <button onClick={añadirAFavoritos}> Añadir a favorito </button>
                 <p>{likes} like(s)</p>
+                <button className="btn-save" onClick={adoptPet}>Adoptar a {pet.nombre}</button>
+                <button className="btn-like" onClick={likePet} disabled={isLiked}>({likes})Like {pet.nombre}</button>
               </div>
 
               {/* Mostrar notificaciones si hay */}
