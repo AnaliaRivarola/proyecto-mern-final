@@ -26,6 +26,8 @@ const HomeAdoptante = () => {
     navigate(`/pets/${id}`); // Redirige al perfil de la mascota
   };
 
+  //<p><strong>OBS: </strong> {pet.otrosDatos}</p>
+  //<p><strong>Likes: </strong> {pet.likes}</p>
   return (
     <>
     <Menu></Menu>
@@ -41,18 +43,20 @@ const HomeAdoptante = () => {
               className="pet-card"
               onClick={() => handleCardClick(pet._id)} // Maneja el clic en la tarjeta
             >
-              <img src={PerroImg} className="pet-image"alt="Logo" />
+              <img  src={pet.tipo === 'gato' ? GatoImg : PerroImg}  className="pet-image"alt="Logo" />
               <h2>{pet.nombre}</h2>
               <p>Es un/a  {pet.tipo} {pet.sexo} {pet.raza} de  {pet.edad} años de edad.</p>
-              <p><strong>OBS: </strong> {pet.otrosDatos}</p>
-              <p><strong>Likes: </strong> {pet.likes}</p>
+   
             </div>
           ))
         ) : (
           <p>No hay mascotas disponibles</p>
         )}
+
+           
+
       </div>
-                </div>
+      </div>
     </div>
     </>
   );

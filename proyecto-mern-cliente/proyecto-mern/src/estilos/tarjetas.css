@@ -38,7 +38,6 @@
   height: 100px;
   object-fit: cover;
   margin-bottom: 13px;
-  border-radius: 50%; /* Esto hace que la imagen sea redonda */
   margin: 0 auto; /* Esto centra la imagen horizontalmente */
   display: block; /* Necesario para que margin auto funcione con imágenes */
 }
