@@ -49,6 +49,7 @@ const PerfilMascota = () => {
     } else {
       console.error('Socket not initialized');
     }
+  
 
     // Opcional: Eliminar la mascota (esto puede depender de tu lógica)
     axios.delete(`http://localhost:8000/api/pets/${id}`)
