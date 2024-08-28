@@ -108,8 +108,7 @@ const PerfilMascota = () => {
 
               <div className="panel-botones">
                 <button className="btn-save" onClick={adoptPet}>Adoptar a {pet.nombre}</button>
-               {/* <button className="btn-like" onClick={likePet} disabled={isLiked}>Like {pet.nombre}</button>
-                <p>{likes} like(s)</p>*/}
+                <button className="btn-like" onClick={likePet} disabled={isLiked}>({likes})Like {pet.nombre}</button>
               </div>
 
               {/* Mostrar notificaciones si hay */}
