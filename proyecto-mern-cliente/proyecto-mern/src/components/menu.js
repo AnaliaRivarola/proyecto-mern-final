@@ -12,16 +12,16 @@ const Menu = () => {
       <div className="wrapper">
       <img className="logo" src={logo} />
         <ul className="nav-links">
-          <li><Link to="/registro">crear cuenta</Link></li>
-          <li><Link to="/PerfilRescatista">Perfil Rescatista</Link></li>
-          <li><Link to="/HomeAdoptante">Adoptante</Link></li>
-          <li><Link to="/HomeRescatista">Rescatista</Link></li>
+          <li><Link to="/registro">Registarse</Link></li>
+          <li><Link to="/PerfilRescatista">Mis mascotas</Link></li>
+          
+          <li><Link to="/HomeRescatista">Solicitudes</Link></li>
           <li><Link to="/pets/new">Agregar Mascota</Link></li>
-          <li><Link to="/">Login</Link></li> {/* Enlace al formulario de login */}
+          <li><Link to="/">Iniciar otra sesion</Link></li> {/* Enlace al formulario de login */}
         </ul>
       </div>
     </nav>
   );
 };
-
+//<li><Link to="/HomeAdoptante">Adoptar</Link></li>
 export default Menu;
