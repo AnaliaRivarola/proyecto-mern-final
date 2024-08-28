@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Menu from '../components/menu';
+import Menu from '../components/MenuAdoptante';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estilos/resgistro.css';
 import PerroImg from "../assents/perro.png";
