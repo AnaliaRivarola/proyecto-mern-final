@@ -8,9 +8,19 @@ import GatoImg from "../assents/gato.png";
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
 import '../App.css'; // Asegúrate de tener este archivo CSS para los estilos
 import '../estilos/tarjetas.css';
+import PerfilMascota from './PerfilMascota';
+
 const HomeAdoptante = () => {
   const [pets, setPets] = useState([]);
   const navigate = useNavigate(); // Usa el hook useNavigate para redirigir
+  const [favoritos, setFavoritos] = useState([]);
+
+    const agregarAFavoritos = (mascota) => {
+    console.log(mascota,"mascotaa")
+    if (!favoritos.some(fav => fav._id === mascota._id)) {
+          setFavoritos([...favoritos, mascota]);
+        }
+      };
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/pets')
@@ -26,8 +36,6 @@ const HomeAdoptante = () => {
     navigate(`/pets/${id}`); // Redirige al perfil de la mascota
   };
 
-  //<p><strong>OBS: </strong> {pet.otrosDatos}</p>
-  //<p><strong>Likes: </strong> {pet.likes}</p>
   return (
     <>
     <Menu></Menu>
@@ -58,6 +66,8 @@ const HomeAdoptante = () => {
       </div>
       </div>
     </div>
+
+    <PerfilMascota agregarAFavoritos={agregarAFavoritos} />
     </>
   );
 };
