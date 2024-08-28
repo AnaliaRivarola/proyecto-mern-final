@@ -20,22 +20,21 @@ const PerfilRescatista = () => {
 
   return (
     <>
-    <Menu></Menu>
-    <div className="perfilRescatista-container">
-      <h1>Rescatista de mascotas</h1>
-      <div className='contenedor-rescatista'> 
-        <h2>Mi informacion</h2>
-        <p>Nombre:</p>
-        <p>Apellido:</p>
-        <p>Telefono:</p>
-        <p>Ciudad:</p>
-      </div>  
-      <h2>Mis mascotas</h2>
-      <div className="button-container">
-        <Link className="btn-nuevo"  to="/pets/new">Agregar una mascota</Link>
+      <Menu></Menu>
+      <div style={{ paddingTop: '100px' }}>
+        <h1 style={{ textAlign: 'center' }}>Rescatista </h1>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 70px' }}>
+          <h1 style={{ margin: 0 }}>Mis mascotas</h1>
+          <Link className="btn-nuevo" to="/pets/new" style={{ fontSize: '20px', textDecoration: 'none', color: '#fff', backgroundColor: '#28a745', borderRadius: '18%' }}>
+           Agregar
+          </Link>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 70px' }}>
+          <ListaMascota pets={pets} />
+        </div>
       </div>
-      <ListaMascota pets={pets} />
-    </div>
     </>
   );
 };
