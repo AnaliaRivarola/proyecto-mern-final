@@ -1,12 +1,13 @@
 // components/ListaMascota.js
-import Menu from './menu';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 const ListaMascota = ({ pets }) => {
   return (
- 
-    <table className="pet-list-table">
+
+    <table >
       <thead>
         <tr>
           <th>Nombre</th>
@@ -15,7 +16,7 @@ const ListaMascota = ({ pets }) => {
           <th>Sexo</th>
           <th>Edad</th>
           <th>Otros datos</th>
-          <th>En adopción</th>
+
           <th>Acciones</th>
         </tr>
       </thead>
@@ -28,15 +29,21 @@ const ListaMascota = ({ pets }) => {
             <td>{pet.sexo}</td>
             <td>{pet.edad}</td>
             <td>{pet.otrosDatos}</td>
-            <td>{pet.enAdopcion ? 'sí' : 'no'}</td> 
+
             <td>
-              <Link to={`/pets/${pet._id}`}>Ver mascota</Link> | <Link to={`/pets/${pet._id}/edit`}>editar</Link>
+              <Link to={`/pets/${pet._id}`}>
+                <FontAwesomeIcon icon={faEye} style={{ marginRight: '20px', color: '#067d8f' }} />  
+              </Link>
+              
+              <Link to={`/pets/${pet._id}/edit`}>
+                <FontAwesomeIcon icon={faEdit} style={{  color: '#28a745' }} /> 
+              </Link>
             </td>
           </tr>
         ))}
       </tbody>
     </table>
-    
+
   );
 };
 
