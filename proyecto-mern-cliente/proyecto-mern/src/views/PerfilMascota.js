@@ -6,7 +6,9 @@ import Menu from '../components/menu';
 import PerroImg from "../assents/perro.png";
 import GatoImg from "../assents/gato.png";
 import '../estilos/perfilMascota.css';
-const PerfilMascota = () => {
+
+
+const PerfilMascota = ({agregarAFavoritos}) => {
   const { id } = useParams();
   const [pet, setPet] = useState({});
   const [likes, setLikes] = useState(0);
@@ -39,7 +41,8 @@ const PerfilMascota = () => {
     };
   }, [id]);
 
-  const adoptPet = () => {
+  const adoptPet = (event) => {
+    event.preventDefault();
     // Emitir solicitud de adopción al servidor
     if (socket) {
       socket.emit('adoptionRequest', { petId: id });
@@ -57,7 +60,8 @@ const PerfilMascota = () => {
       .catch(err => console.error(err));
   };
 
-  const likePet = () => {
+  const likePet = (event) => {
+    event.preventDefault();
     axios.put(`http://localhost:8000/api/pets/${id}/like`)
       .then(res => {
         setLikes(likes + 1);
@@ -69,7 +73,12 @@ const PerfilMascota = () => {
   const goHome = () => {
     navigate('/');
   };
-
+  
+  const añadirAFavoritos = (event)=>{
+    event.preventDefault();
+    agregarAFavoritos(pet);
+    navigate('/HomeAdoptante')
+}
   return (
     <>
       <Menu />
@@ -106,6 +115,7 @@ const PerfilMascota = () => {
               <div className="panel-botones">
                 <button className="btn-save" onClick={adoptPet}>Adoptar {pet.nombre}</button>
                 <button className="btn-like" onClick={likePet} disabled={isLiked}>Like {pet.nombre}</button>
+                <button onClick={añadirAFavoritos}> Añadir a favorito </button>
                 <p>{likes} like(s)</p>
               </div>
 
