@@ -27,17 +27,11 @@ const EditarMascota = () => {
   if (!pet) {
     return <div>Loading...</div>;
   }
-  const goHome = () => {
-    navigate('/');
-  };
+
   return (
     <div>
-      <div className='atras'>
-        <button className="back-button" onClick={goHome}>Volver a inicio</button>
-      </div>
-      <h1>Refugio de Mascotas</h1>
-      <div className="edit-pet-container">
-        <h2>Editar perfil de  {pet.nombre}</h2>
+      
+      <div>
         <FormularioMascota
           initialNombre={pet.nombre}
           initialTipo={pet.tipo}

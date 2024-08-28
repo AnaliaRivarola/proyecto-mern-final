@@ -32,9 +32,9 @@ const FormularioMascota = ({ initialNombre = '', initialTipo = '', initialRaza =
   return (
     <>
     <Menu></Menu>
-      <div className="body-registro gradient-custom-2">
+      <div className="body-registro gradient-custom">
         <div className="container-registro">
-          <h2 className="titulo-registro">Agregar Mascota</h2>
+          <h2 className="titulo-registro">Mascota</h2>
           <form className="form-registro" onSubmit={addmascota}>
             <div className="form-row" >
               <div className="form-group-registro">
