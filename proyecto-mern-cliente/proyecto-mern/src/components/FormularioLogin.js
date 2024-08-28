@@ -95,15 +95,15 @@ const FormularioLogin = () => {
 
                       {err && <div className="text-danger mb-4">{err}</div>}
 
-                      <div className="  ">
+                      <div style={{ textAlign: "center" }}>
                         <button
                           type="submit"
-                          className=" gradient-color w-100"
+                          className=" gradient-color w-100 espacio"
                         > 
                           
                           Iniciar sesión
                         </button>
-                        <Link className="text-muted" to="#">¿Olvidó su contraseña?</Link>
+                        <Link className="text-muted " to="#">¿Olvidó su contraseña?</Link>
                       </div>
 
                       <div className="d-flex align-items-center justify-content-left  ">

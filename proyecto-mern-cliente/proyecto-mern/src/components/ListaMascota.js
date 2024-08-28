@@ -27,7 +27,7 @@ const ListaMascota = ({ pets }) => {
             <td>{pet.tipo}</td>
             <td>{pet.raza}</td>
             <td>{pet.sexo}</td>
-            <td>{pet.edad}</td>
+            <td>{Math.floor(pet.edad/12)} años, {pet.edad % 12} meses</td>
             <td>{pet.otrosDatos}</td>
 
             <td>

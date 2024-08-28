@@ -14,6 +14,10 @@ button[type="submit"].gradient-custom {
     height: auto; /* Asegura que la altura se ajuste automáticamente */
     line-height: 1.5; /* Ajusta la altura de la línea para controlar la altura del texto */
 }
+.espacio {	    
+    margin-bottom: 20px;
+    text-align: center;
+}
 p {
     justify-content: center;
     align-items: center;
