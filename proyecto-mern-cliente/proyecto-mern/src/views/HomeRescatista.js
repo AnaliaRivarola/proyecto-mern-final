@@ -100,8 +100,8 @@ const HomeRescatista = () => {
     navigate('/pets/new');
   };
 
-  const verperfil = () => {
-    navigate('/PerfilRescatista');
+  const HomeRescatista = () => {
+    navigate('/HomeRescatista');
   };
 
   const handleAccept = (adoptanteSocketId, petId) => {
@@ -122,8 +122,8 @@ const HomeRescatista = () => {
       <div className="home-page body-registro fondo-registro">
         <div className="container">
           <div className="left-column">
-            <div className="panel-resumen">
-              <h2>Resumen</h2>
+            <div className="panel-resumen titulo">
+              <h2 >Resumen</h2>
               <p>Total de Mascotas Registradas: {summary.totalMascotas}</p>
               <p>Mascotas Disponibles: {summary.disponibles}</p>
               <p>Mascotas Adoptadas: {summary.adoptadas}</p>
@@ -138,13 +138,13 @@ const HomeRescatista = () => {
 
           <div className="right-column">
             <div className="acceso-rapido">
-              <h2>Acceso Rápido</h2>
-              <button onClick={crearmascota}>Agregar Nueva Mascota</button>
-              <button onClick={verperfil}>Mi perfil</button>
+              <h2  >Acceso Rápido</h2>
+              <button id="nuevo" onClick={crearmascota}>Agregar Mascota</button>
+              <button id="lista" onClick={HomeRescatista}>Lista de Mascotas</button>
             </div>
 
             <div className="solicitudes">
-              <h2>Solicitudes</h2>
+              <h2 className="titulo">Solicitudes</h2>
               {requests.length > 0 ? (
                 requests.map((request, index) => (
                   <div key={index}>

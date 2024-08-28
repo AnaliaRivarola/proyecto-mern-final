@@ -1,14 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
+
 
 .container {
     display: flex;
@@ -29,7 +26,7 @@ h1 {
 .panel-resumen, .estadisticas, .acceso-rapido, .solicitudes {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #e9ecef;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -37,27 +34,34 @@ h1 {
 .panel-resumen h2, .estadisticas h2, .acceso-rapido h2, .solicitudes h2 {
     margin-bottom: 15px;
     font-size: 1.5em;
-    color: #007bff;
+    color: #d8363a;
+    font-family: 'Poppins', sans-serif;
 }
 
 .panel-resumen p, .estadisticas p, .acceso-rapido p, .solicitudes p {
-    font-size: 1.2em;
+    font-size: 16px;
     margin: 10px 0;
-    color: #555;
+    color: #0a0a0a;
 }
 
 button {
-    background-color: #007bff;
+    
     color: #fff;
     padding: 12px 25px;
     font-size: 1em;
     border: none;
+    width: 100%;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
 }
-
+button, #nuevo{
+    background-color: #28a745;
+}
+button, #lista{
+    background-color: #007bff;
+}
 button:hover {
-    background-color: #0056b3;
+    background-color: #0057b35b;
 }
