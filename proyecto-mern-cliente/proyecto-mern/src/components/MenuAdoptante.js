@@ -13,7 +13,6 @@ const Menu = () => {
         <ul className="nav-links">
           
           <li><Link to="/HomeAdoptante">Adoptar</Link></li>
-          <li><Link to="">Favoritos</Link></li>
           
           <li><Link to="/registro">Registrarse</Link></li>
           <li><Link to="/">Iniciar sesión</Link></li> 
