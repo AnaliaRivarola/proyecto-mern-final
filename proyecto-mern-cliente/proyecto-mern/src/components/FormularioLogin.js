@@ -59,13 +59,10 @@ const FormularioLogin = () => {
   }
 
   return (
-    <section className="gradient-form" style={{ backgroundColor: "#eee" }}>
-      <div className="">
-        <div className="d-flex justify-content-center align-items-center ">
-          <div className="col-xl-12">
-            <div className="card rounded-3 text-black">
-              <div className="row g-0">
-                <div className="col-lg-4 d-flex">
+
+            
+              <div className="row g-0 ">
+                <div className="col-lg-4">
                   <div className="card-body p-md-5 ">
 
                     <div className="text-center">
@@ -120,7 +117,7 @@ const FormularioLogin = () => {
 
                   </div>
                 </div>
-                <div className="col-lg-8 d-flex align-items-center gradient-color">
+                <div className="col-lg-8   d-flex align-items-center  gradient-color">
                   <div className="text-white px-3 py-4 p-md-5 mx-md-4 ">
                     <h4 className="mb-4" style={{ textAlign: "center" }}>¡Bienvenidos a Adopt Me!</h4>
                     <p className="small  "  style={{ textAlign: "justify" }}>Estamos encantados de que estés aquí. Adopt Me es una organización sin fines de lucro dedicada a una misión muy especial: encontrar un hogar amoroso para cada animalito que lo necesita. </p>
@@ -130,11 +127,9 @@ const FormularioLogin = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          
+        
+      
   );
 };
 
