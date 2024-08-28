@@ -21,12 +21,11 @@ const PerfilRescatista = () => {
   return (
     <>
       <Menu></Menu>
-      <div style={{ paddingTop: '100px' }}>
-        <h1 style={{ textAlign: 'center' }}>Rescatista </h1>
+      <div style={{ paddingTop: '100px', backgroundcolor: '##ededed' }}>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 70px' }}>
           <h1 style={{ margin: 0 }}>Mis mascotas</h1>
-          <Link className="btn-nuevo" to="/pets/new" style={{ fontSize: '20px', textDecoration: 'none', color: '#fff', backgroundColor: '#28a745', borderRadius: '18%' }}>
+          <Link className="btn-nuevo" to="/pets/new" style={{ fontSize: '14px', textDecoration: 'none', color: '#fff', backgroundColor: '#28a745', borderRadius: '4%' }}>
            Agregar
           </Link>
         </div>
