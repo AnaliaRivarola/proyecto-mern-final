@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.left-column {
+    flex: 7; /* Ocupa el 70% del ancho */
+    margin-right: 20px;
+}
+
+.right-column {
+    flex: 3; /* Ocupa el 30% del ancho */
+}
+
+.panel-resumen, .estadisticas, .acceso-rapido, .solicitudes {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel-resumen h2, .estadisticas h2, .acceso-rapido h2, .solicitudes h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.panel-resumen p, .estadisticas p, .acceso-rapido p, .solicitudes p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
